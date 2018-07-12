@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<main class="page catalog-page">
+    <section class="clean-block clean-catalog dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Zebpay Current Prices</h2>
+                <p>This &nbsp;is a live updates from the Zebpay exchange in India.</p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-striped">
+                        <thead class="thead-primary">
+                          <tr>
+                            <th scope="col">Pair Name</th>
+                            <th scope="col">Volume</th>
+                            <th scope="col">Price Change(24h)</th>
+                            <th scope="col">Buy Price</th>
+                            <th scope="col">Sell Price</th>
+                          </tr>
+                        </thead>
+                        <% pairs.forEach((coin)=>{ %>
+                          <tr>
+                            <td><%= coin.pair  %></td>
+                            <th scope="col"><%= coin.volume  %></th>
+                            <td><%= coin.pricechange  %>%</td>
+                            <th  scope="col">Rs.<%= coin.buy %></th>
+                            <td>Rs.<%= coin.sell  %></td>
+                          </tr>
+                        <% }) %>
+                      </table>
+                    </div>
+                </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<% include ../partials/footer%>

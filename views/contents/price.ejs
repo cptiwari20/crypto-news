@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<main class="page catalog-page">
+    <section class="clean-block clean-catalog dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">CoinMarketCap Prices</h2>
+                <p>This &nbsp;is a live updates from the Zebpay exchange in India.</p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-striped">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">symbol</th>
+                            <th scope="col">Percent Change(24h)</th>
+                            <th scope="col">Price USD</th>
+                            <th scope="col">Price BTC</th>
+                          </tr>
+                        </thead>
+                        <% coins.forEach((coin)=>{ %>
+                          <tr>
+                            <td><%= coin.rank  %></td>
+                            <td><%= coin.name  %></td>
+                            <th scope="col"><%= coin.symbol  %></th>
+                            <td><%= coin.percent_change_24h  %>%</td>
+                            <th  scope="col"><%= coin.price_usd  %></th>
+                            <td><%= coin.price_btc  %></td>
+                          </tr>
+                        <% }) %>
+                      </table>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+<% include ../partials/footer %>

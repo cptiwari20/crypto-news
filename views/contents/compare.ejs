@@ -1,0 +1,218 @@
+<% include ../partials/header %>
+
+<main class="page catalog-page">
+        <section class="clean-block clean-catalog dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Bitcoin Prices in Different Exchanges</h2>
+                    <p>This &nbsp;is a live updates from the different exchanges in India.</p>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <thead class="thead">
+                                    <tr>
+                                        <th scope="col">Coins</th>
+                                        <th scope="col">Koinex</th>
+                                        <th scope="col">ZebPay</th>
+                                        <th scope="col">BuyUCoin</th>
+                                        <th scope="col">UnoCoin</th>
+                                        <th scope="col">BitBNS</th>
+                                    </tr>
+                                </thead>
+                                    <tr>
+                                        <th scope='col'>BTC</th>
+                                        <td><%= Koins.BTC.last_traded_price%></td>
+                                        <td><% Zcoins.forEach((coin) => { %>
+                                            <%if(coin.pair === 'BTC-INR'){ %>
+                                              Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                            <% }}); %></td>
+                                        <td>Bid: <%= Bcoins.btc_inr.bid%>
+                                            <br>
+                                            Ask: <%= Bcoins.btc_inr.ask%></td>
+                                        <td><%= UnBTC %></td> 
+                                        <td></td>                                      
+                                    </tr>           
+                                    <tr>
+                                            <th scope='col'>ETH</th>
+                                            <td><%= Koins.ETH.last_traded_price%></td>
+                                            <td>
+                                                <% Zcoins.forEach((coin) => { %>
+                                                <%if(coin.pair === 'ETH-INR'){ %>
+                                                    Buy: <%= coin.buy%>
+                                                    <br>
+                                                    Sell: <%= coin.sell%>
+                                                <% }}); %>
+                                            </td>
+                                            <td>Bid: <%= Bcoins.eth_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.eth_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>XRP</th>
+                                            <td><%= Koins.XRP.last_traded_price%></td>
+                                            <td>
+                                                <% Zcoins.forEach((coin) => { %>
+                                            <%if(coin.pair === 'BTC-INR'){ %>
+                                             Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                            <% }}); %>
+                                            </td>
+                                            <td>Bid: <%= Bcoins.xrp_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.xrp_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>EOS</th>
+                                            <td><%= Koins.EOS.last_traded_price%></td>
+                                            <td>
+                                                <% Zcoins.forEach((coin) => { %>
+                                            <%if(coin.pair === 'EOS-INR'){ %>
+                                             Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                            <% }}); %>
+                                            </td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>BCH</th>
+                                            <td><%= Koins.BCH.last_traded_price%></td>
+                                            <td><% Zcoins.forEach((coin) => { %>
+                                                <%if(coin.pair === 'BCH-INR'){ %>
+                                                 Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                                <% }}); %></td>
+                                            <td>Bid: <%= Bcoins.bcc_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.bcc_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>LTC</th>
+                                            <td><%= Koins.BCH.last_traded_price%></td>
+                                            <td><% Zcoins.forEach((coin) => { %>
+                                                <%if(coin.pair === 'LTC-INR'){ %>
+                                                 Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                                <% }}); %></td>
+                                            <td>Bid: <%= Bcoins.ltc_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.ltc_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>ONT</th>
+                                            <td><%= Koins.ONT.last_traded_price%></td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>ZIL</th>
+                                            <td><%= Koins.ZIL.last_traded_price%></td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>NEO</th>
+                                            <td><%= Koins.NEO.last_traded_price%></td>
+                                            <td></td>
+                                            <td>Bid: <%= Bcoins.neo_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.neo_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>GAS</th>
+                                            <td><%= Koins.GAS.last_traded_price%></td>
+                                            <td></td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>XLM</th>
+                                            <td><%= Koins.XLM.last_traded_price%></td>
+                                            <td></td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>TRX</th>
+                                            <td><%= Koins.TRX.last_traded_price%></td>
+                                            <td></td>
+                                            <td>-</td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>GNT</th>
+                                            <td><%= Koins.GNT.last_traded_price%></td>
+                                            <td><% Zcoins.forEach((coin) => { %>
+                                                <%if(coin.pair === 'GNT-INR'){ %>
+                                                 Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                                <% }}); %></td>
+                                            <td>Bid: <%= Bcoins.gnt_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.gnt_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>OMG</th>
+                                            <td><%= Koins.OMG.last_traded_price%></td>
+                                            <td><% Zcoins.forEach((coin) => { %>
+                                                <%if(coin.pair === 'OMG-INR'){ %>
+                                                 Buy: <%= coin.buy %>
+                                             <br>
+                                             Sell: <%= coin.sell%>
+                                                <% }}); %></td>
+                                            <td>Bid: <%= Bcoins.omg_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.omg_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    <tr>
+                                            <th scope='col'>BCH</th>
+                                            <td><%= Koins.BCH.last_traded_price%></td>
+                                            <td></td>
+                                            <td>Bid: <%= Bcoins.btc_inr.bid%>
+                                                <br>
+                                                Ask: <%= Bcoins.btc_inr.ask%></td>
+                                            <td></td>
+                                            <td></td> 
+                                    </tr>
+                                    
+                                          
+                            </table>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<% include ../partials/footer %>

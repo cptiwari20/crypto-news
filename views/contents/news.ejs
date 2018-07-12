@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<main class="page blog-post-list">
+    <section class="clean-block clean-blog-list dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Recent Bitcoin News</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+            </div>
+            <div class="block-content">
+            <%articles.forEach(function(article){%>
+                <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col-lg-5"><img class="rounded img-fluid" src="<%=article.urlToImage%>"></div>
+                        <div class="col-lg-7">
+                            <h3><%= article.title %></h3>
+                            <div class="info"><span class="text-muted"><%=article.publishedAt%> by&nbsp;<a href="#"><%=article.source.name%></a></span></div>
+                            <p><%= article.description%></p>
+                            <button class="btn btn-outline-primary btn-sm" type="button"><a href="<%= article.url%>">Read More</a></button></div>
+                    </div>
+                </div>
+              <%})%>
+            </div>
+        </div>
+    </section>
+</main>
+
+<% include ../partials/footer %>
